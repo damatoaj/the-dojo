@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
-import { projectAuth, projectStorage, projectFirestore } from '../firebase/config'
-import { useAuthContext } from './useAuthContext'
+import { useState, useEffect } from 'react';
+import { projectAuth, projectStorage, projectFirestore } from '../firebase/config';
+import { useAuthContext } from './useAuthContext';
 
 export const useSignup = () => {
   const [isCancelled, setIsCancelled] = useState(false)
@@ -59,4 +59,4 @@ export const useSignup = () => {
   }, [])
 
   return { signup, error, isPending }
-}
+};

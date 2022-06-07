@@ -1,7 +1,7 @@
-import './ProjectList.css'
-import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
-import Avatar from '../avatar/Avatar'
+import './ProjectList.css';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import Avatar from '../avatar/Avatar';
 
 export default function ProjectList({projects}) {
     return (
@@ -10,7 +10,7 @@ export default function ProjectList({projects}) {
             {projects.map(project => (
                 <Link 
                     key={project.id} 
-                    to={`/projects/${project.id}`}
+                    to={`/project/${project.id}`}
                 >
                     <h4>{project.name}</h4>
                     <p>Due by {project.dueDate.toDate().toDateString()}</p>
@@ -27,8 +27,8 @@ export default function ProjectList({projects}) {
             ))}
         </div>
     )
-}
+};
 
 ProjectList.propTypes = {
     projects: PropTypes.array
-}
+};

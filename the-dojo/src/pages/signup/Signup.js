@@ -16,7 +16,7 @@ export default function Signup() {
         e.preventDefault();
         console.log(email, password, thumbnail, displayName)
         signup(email, password, displayName, thumbnail)
-    }
+    };
 
     const handleFileChange = (e) => {
         setThumbnail(null);
@@ -39,8 +39,7 @@ export default function Signup() {
         setThumbnailError(null);
 
         setThumbnail(selected);
-        console.log('Thumbnail updated')
-    }
+    };
 
     return(
         <form className="auth-form" onSubmit={handleSubmit}>
@@ -86,4 +85,4 @@ export default function Signup() {
             {error && <div className="error">{error}</div>}
         </form>
     )
-}
+};

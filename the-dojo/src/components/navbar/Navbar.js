@@ -1,9 +1,9 @@
 import { useAuthContext } from '../../hooks/useAuthContext';
 //styles & images
-import './Navbar.css'
-import Temple from '../../assets/temple.svg'
+import './Navbar.css';
+import Temple from '../../assets/temple.svg';
 
-import React from 'react'
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLogout } from '../../hooks/useLogout';
 
@@ -36,6 +36,6 @@ function Navbar() {
         </ul>
     </div>
   )
-}
+};
 
 export default Navbar

@@ -17,5 +17,5 @@ export default function OnlineUsers() {
                 </div>
             ))}
         </div>
-    )
-}
+    );
+};

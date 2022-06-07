@@ -1,4 +1,3 @@
-//styles
 import { useState, useEffect } from 'react';
 import { timestamp } from '../../firebase/config';
 import { useCollection } from '../../hooks/useCollection';
@@ -6,6 +5,8 @@ import { useFirestore } from '../../hooks/useFirestore';
 import { useAuthContext } from '../../hooks/useAuthContext';
 import Select from 'react-select';
 import { useHistory } from 'react-router-dom';
+
+//styles
 import './Create.css';
 
 const categories = [
@@ -13,7 +14,7 @@ const categories = [
     { value: 'design', label: 'Design' },
     { value: 'sales', label: 'Sales' },
     { value: 'marketing', label: 'Marketing' },
-  ]
+  ];
 
 export default function Create() {
     const history = useHistory();
@@ -137,4 +138,4 @@ export default function Create() {
             </form>
         </div>
     )
-}
+};
