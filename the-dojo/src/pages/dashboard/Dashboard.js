@@ -17,6 +17,8 @@ export default function Dashboard() {
 
     const projects = documents ? documents.filter((document) => {
         switch(currentFilter) {
+
+        
             case 'all':
                 return true
             case 'mine':

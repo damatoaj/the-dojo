@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import { useAuthContext } from './hooks/useAuthContext';
 
 
@@ -24,28 +24,13 @@ function App() {
           {user && <Sidebar />}
           <div className="container">
             <Navbar />
-            <Switch>
-              <Route exact path='/'>
-                {!user && <Redirect to="/login" />}
-                {user && <Dashboard /> }
-              </Route>
-              <Route path='/create'>
-                {!user && <Redirect to="/login" />}
-                {user && <Create />}
-              </Route>
-              <Route path='/project/:id'>
-                {!user && <Redirect to="/login" />}
-                {user && <Project />}
-              </Route>
-              <Route path='/signup'>
-                {user && <Redirect to="/" />}
-                {!user && <Signup />}
-              </Route>
-              <Route path='/login'>
-                {!user && <Login /> }
-                {user && <Redirect to='/' />}
-              </Route>
-            </Switch>
+            <Routes>
+              <Route path='/' element={user ? <Dashboard /> : <Navigate to="/login" />} />
+              <Route path='/create' element={user ? <Create /> : <Navigate to="/login" />} />
+              <Route path='/project/:id' element={user ? <Project /> : <Navigate to="/login" /> } />
+              <Route path='/signup' element={user ? <Navigate to="/" /> : <Signup /> } />
+              <Route path='/login' element={user ? <Navigate to='/' /> : <Login />} />
+            </Routes>
           </div>
           {user && <OnlineUsers />}
         </BrowserRouter>

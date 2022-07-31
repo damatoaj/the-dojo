@@ -68,5 +68,5 @@ export default function ProjectComments({project}) {
 };
 
 ProjectComments.propTypes = {
-    project : PropTypes.object
+    project : PropTypes.object,
 };
